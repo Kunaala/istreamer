@@ -1,0 +1,10 @@
+<launch>
+
+        <node pkg="istreamer" name="image_publisher" type="istream" />
+        <!-- Publish wheel odometry from MCU encoder data -->
+        
+        <node pkg="topic_tools" name="fps_throttle" type="drop" args="camera/stream 3 4" />
+        <!-- Diagnostic Aggregator -->
+        <node pkg="istreamer" name="image_receiver" type="ireceive" />
+    
+</launch>
